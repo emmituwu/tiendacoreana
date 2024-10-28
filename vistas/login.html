@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div id="loginadminform">
+        <h1>Login</h1>
+        <?php
+        session_start();
+        if (isset($_SESSION['mensaje'])): ?>
+            <p><?= $_SESSION['mensaje'] ?></p>
+            <?php unset($_SESSION['mensaje']); ?>
+        <?php endif; ?>
+        <form action="../controladores/login.php" method="post">
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" name="usuario" required>
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" id="contrasena" name="contrasena" required>
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+        <a href="../index.php"><button>Volver al Inicio</button></a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "require": {
+    "php": "^8.2"
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "mkdir -p storage/logs"
+    ]
+  }
+}
